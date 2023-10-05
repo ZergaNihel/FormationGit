@@ -26,13 +26,23 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container"
         <h1>Documentation Git</h1>
     </div>
     <div class="explanation">
         <p>Git est un système de gestion de versions décentralisé qui permet de suivre les modifications apportées à un projet logiciel au fil du temps. GitHub, quant à lui, est une plateforme web populaire pour l'hébergement de projets Git, la collaboration et le partage de code source.</p>
         <h3>Comprendre le fonctionnement de Git bisect</h3>
-            
+        <p>Git bisect est une fonctionnalité de Git qui permet de trouver rapidement le commit exact qui a introduit un bogue ou une erreur dans le code. Il fonctionne en effectuant une recherche binaire dans l'historique des commits pour identifier le premier commit "mauvais" (bad) en se basant sur les informations que vous lui fournissez.</p>
+        <p>Voici comment utiliser Git bisect :</p>
+        <ol>
+            <li>Identifiez un commit connu comme "bon" (good) et un autre comme "mauvais" (bad).</li>
+            <li>Utilisez la commande <code>git bisect start</code> pour démarrer le processus.</li>
+            <li>Utilisez <code>git bisect good &lt;bon_commit_hash&gt;</code> et <code>git bisect bad &lt;mauvais_commit_hash&gt;</code> pour marquer les commits bons et mauvais.</li>
+            <li>Git vous positionnera automatiquement sur un commit intermédiaire pour effectuer un test.</li>
+            <li>Testez le code pour déterminer s'il est bon ou mauvais, puis marquez-le avec <code>git bisect good</code> ou <code>git bisect bad</code>.</li>
+            <li>Répétez les étapes précédentes jusqu'à ce que Git identifie le commit qui a introduit l'erreur.</li>
+        </ol>
+        <p>Git bisect est un outil puissant pour diagnostiquer et résoudre rapidement des problèmes dans votre code en identifiant le commit responsable de l'erreur.</p>
     </div>
 </body>
 </html>
